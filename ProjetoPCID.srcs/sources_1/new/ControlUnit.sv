@@ -1,5 +1,5 @@
 
-module ControlUnit( input       clk, RF_Rp_zero,
+module FSM( input       clk, RF_Rp_zero,
                     input[0:15] IR_data,
                    output       PC_ld, PC_clr, PC_inc,
                    output       I_rd, IR_ld, D_rd, D_wr,
