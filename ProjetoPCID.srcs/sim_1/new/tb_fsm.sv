@@ -44,6 +44,7 @@ module tb_fsm( );
           end
       
       initial begin
+          _RF_Rp_zero = 1;
           IR_data= {4'b011, 4'b0100, 8'b00001111}; #40;
           IR_data= {4'b011, 4'b1000, 8'b01111000}; #30;
           
@@ -55,7 +56,9 @@ module tb_fsm( );
           IR_data= {4'b001, 4'b0100, 8'b00001111}; #30;
           IR_data= {4'b001, 4'b1000, 8'b01111000}; #30;
           
-          IR_data= {4'b101, 4'b0000, 8'b00001001}; #40;
+          IR_data= {4'b101, 4'b0000, 8'b00001001}; #100;
+          _RF_Rp_zero = 0;
+          IR_data= {4'b111, 4'b0000, 8'b01000100}; #100;
       end
 
 endmodule
