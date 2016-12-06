@@ -62,7 +62,7 @@ module FSM( input       clk, RF_Rp_zero,
     
     assign RF_W_wr = ( state == load || state == add || state == subtract || state == loadconst );
     assign RF_W_addr = ( state == load || state == add || state == subtract || state == loadconst ) ? ra : 0;
-    assign RF_W_data = 0;
+    assign RF_W_data = IR_data[8:15];
     
     assign RF_Rp_rd = ( state == store || state == jumpiz || state == add || state == subtract );
     assign RF_Rp_addr = ( state == store || state == jumpiz ) ? ra : ( state == add || state == subtract ) ? rb : 0;
@@ -70,7 +70,7 @@ module FSM( input       clk, RF_Rp_zero,
     assign RF_Rq_rd = ( state == add || state == subtract );
     assign RF_Rq_addr = ( state == add || state == subtract ) ? rc : 0;
     
-    assign RF_s = ( state == load ) ? 1 : ( state == loadconst ) ? 2 : ( state == add || state == subtract ) ? 0 : 'bx;
+    assign RF_s = ( state == load ) ? 1 : ( state == loadconst ) ? 2 : ( state == add || state == subtract ) ? 0 : 3;
     assign alu_s = ( state == add ) ? 1 : ( state == subtract ) ? 2 : 0;
 
 endmodule

@@ -31,6 +31,3 @@ module IR(
         if (load) inst <= data;
                        
 endmodule
-
-    );
-endmodule

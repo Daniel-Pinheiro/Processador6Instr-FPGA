@@ -16,3 +16,5 @@ Desktop.ini
 ProjetoPCID.cache/*
 ProjetoPCID.runs/*
 ProjetoPCID.hw/*
+ProjetoPCID.sim/*
+ProjetoPCID.ip_user_files/*
