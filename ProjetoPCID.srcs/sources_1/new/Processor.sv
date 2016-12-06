@@ -18,6 +18,8 @@ module Processor(input       clk
                              RF_W_wr, RF_Rp_rd, RF_Rq_rd,
                              RF_s, alu_s );
     
+    assign result = a + b - 1;
+    
     //ligação dos sinais com as saídas
     
 endmodule

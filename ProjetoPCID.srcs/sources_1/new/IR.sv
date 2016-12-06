@@ -21,6 +21,16 @@
 
 
 module IR(
+    input logic [15:0] data,
+    input logic load,
+    input clk,
+    output logic [15:0] inst
+    );
+    
+    always @(posedge clk)
+        if (load) inst <= data;
+                       
+endmodule
 
     );
 endmodule
