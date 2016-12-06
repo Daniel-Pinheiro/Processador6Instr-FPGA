@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 05.12.2016 23:49:53
+// Create Date: 06.12.2016 00:07:58
 // Design Name: 
-// Module Name: Memory
+// Module Name: MemoryD
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Memory(
+module MemoryD(
 
     );
 endmodule
