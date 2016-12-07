@@ -1,26 +1,15 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 05.12.2016 23:49:53
-// Design Name: 
-// Module Name: Mux
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-
-module Mux(
-
+module mux(
+    input logic [15:0] d0,
+    input logic [15:0] d1,
+    input logic [15:0] d2,
+    input logic s0,s1,
+    output logic [15:0] y 
     );
+    
+    logic [7:0] d;
+    assign d = 8'b0;
+    
+    //assign y = s1  ? d2 : ( s0 ? d1 : {d, d0[7:0]} );
+    assign y = s1  ? {d,d2[7:0]} : ( s0 ? d1 :  d0 );
 endmodule

@@ -1,6 +1,7 @@
 
-module Processor(input       clk
-                 );
+module Processor( input       clk,
+                  input [15:0] chaves,
+                 output [15:0] leds );
     
     //Definição dos sinais dos componentes
     logic       D_rd, D_wr;
@@ -8,6 +9,21 @@ module Processor(input       clk
     logic [0:7] D_addr, RF_W_data;
     logic [0:3] RF_W_wr, RF_Rp_rd, RF_Rq_rd;
     logic [0:1] RF_s, alu_s ;
+    
+    logic [15:0] R_data;
+    logic [7:0] RF_W_data;
+    logic       RF_s1;
+    logic       RF_s0;
+    logic [3:0] RF_W_addr;
+    logic       RF_W_wr;
+    logic [3:0] RF_Rp_addr;
+    logic       RF_Rp_rd;
+    logic [3:0] RF_Rq_addr;
+    logic       RF_Rq_rd;
+    logic       alu_s1;
+    logic       alu_s0;
+    logic [15:0] W_data;
+    logic        RF_Rp_zero;
     
     //Definição do componentes
     ControlUnit ControlUnit( clk, RF_Rp_zero,
@@ -18,7 +34,21 @@ module Processor(input       clk
                              RF_W_wr, RF_Rp_rd, RF_Rq_rd,
                              RF_s, alu_s );
     
-    assign result = a + b - 1;
+    DataPath OperationalBlock( clk,
+                               R_data,
+                               RF_W_data,
+                               RF_s1,
+                               RF_s0,
+                               RF_W_addr,
+                               RF_W_wr,
+                               RF_Rp_addr,
+                               RF_Rp_rd,
+                               RF_Rq_addr,
+                               RF_Rq_rd,
+                               alu_s1,
+                               alu_s0,
+                               W_data,
+                               RF_Rp_zero );
     
     //ligação dos sinais com as saídas
     

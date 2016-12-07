@@ -1,26 +1,5 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 06.12.2016 09:35:08
-// Design Name: 
-// Module Name: tb_fsm
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-
-module tb_fsm( );
+module tb_FSM( );
     
     logic[0:15] IR_data;
     logic       PC_ld, PC_clr, PC_inc, clk;

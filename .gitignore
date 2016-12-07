@@ -1,20 +1,20 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# =========================
-# Operating System Files
-# =========================
-
 *.log
 *.jou
-
+*.str
 
 ProjetoPCID.cache/*
 ProjetoPCID.runs/*
 ProjetoPCID.hw/*
 ProjetoPCID.sim/*
 ProjetoPCID.ip_user_files/*
+
+# =========================
+# Operating System Files
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
