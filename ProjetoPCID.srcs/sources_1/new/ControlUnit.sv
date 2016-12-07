@@ -3,9 +3,9 @@ module ControlUnit( input       clk, RF_Rp_zero,
                     input [0:15] I_data,
                    output [0:15] I_addr,
                    output       I_rd, D_rd, D_wr,
-                   output       RF_W_addr, RF_Rp_addr, RF_Rq_addr,
+                   output [0:3] RF_W_addr, RF_Rp_addr, RF_Rq_addr,
                    output [0:7] D_addr, RF_W_data,
-                   output [0:3] RF_W_wr, RF_Rp_rd, RF_Rq_rd,
+                   output       RF_W_wr, RF_Rp_rd, RF_Rq_rd,
                    output [0:1] RF_s, alu_s );
 
     //Definição dos sinais dos componentes
