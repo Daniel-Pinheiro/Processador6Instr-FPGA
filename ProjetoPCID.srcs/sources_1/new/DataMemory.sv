@@ -1,5 +1,5 @@
 
-module DataMemory(
+module RAM(
                 input logic [15:0] W_data,
                 input logic [7:0] addr,
                 input logic wr,
@@ -12,7 +12,7 @@ module DataMemory(
     logic [15:0] mem[255:0];
     logic [7:0] d;
 
-    always @(posedge clk)
+    always_ff @(posedge clk)
             if (wr) mem[addr] <= W_data;
             else if (rd) R_data <= mem[addr];
 

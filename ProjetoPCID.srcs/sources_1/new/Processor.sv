@@ -9,15 +9,12 @@ module Processor( input       clk,
     logic [0:7] D_addr, RF_W_data;
     logic [0:3] RF_W_wr, RF_Rp_rd, RF_Rq_rd;
     logic [0:1] RF_s, alu_s ;
-    
-    logic [15:0] R_data;
-    logic       RF_s1;
-    logic       RF_s0;
-    logic       alu_s1;
-    logic       alu_s0;
-    logic [15:0] W_data;
+    logic [15:0] R_data, W_data;
     
     //Definição do componentes
+    ROM InstructionMemory( 
+        rd, addr, data );
+
     ControlUnit ControlUnit( 
         clk, RF_Rp_zero,
         data, addr,
@@ -31,20 +28,20 @@ module Processor( input       clk,
         clk,
         R_data,
         RF_W_data,
-        RF_s1,
-        RF_s0,
+        RF_s[1],
+        RF_s[0],
         RF_W_addr,
         RF_W_wr,
         RF_Rp_addr,
         RF_Rp_rd,
         RF_Rq_addr,
         RF_Rq_rd,
-        alu_s1,
-        alu_s0,
+        alu_s[1],
+        alu_s[0],
         W_data,
         RF_Rp_zero );
     
-    DataMemory RAM(
+    RAM DataMemory(
         W_data,
         addr,
         wr,
