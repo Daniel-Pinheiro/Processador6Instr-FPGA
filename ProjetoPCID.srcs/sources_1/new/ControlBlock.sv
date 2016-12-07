@@ -4,7 +4,7 @@ module FSM( input       clk, RF_Rp_zero,
            output       PC_ld, PC_clr, PC_inc,
            output       I_rd, IR_ld,
            output       D_rd, D_wr,
-           output       RF_W_addr, RF_Rp_addr, RF_Rq_addr,
+           output [0:3] RF_W_addr, RF_Rp_addr, RF_Rq_addr,
            output [0:7] D_addr, RF_W_data,
            output [0:3] RF_W_wr, RF_Rp_rd, RF_Rq_rd,
            output [0:1] RF_s, alu_s );
