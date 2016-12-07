@@ -4,9 +4,9 @@ module tb_FSM( );
     logic[0:15] IR_data;
     logic       PC_ld, PC_clr, PC_inc, clk;
     logic       I_rd, IR_ld, _D_rd, _D_wr;
-    logic       _RF_Rp_zero, _RF_W_addr, _RF_Rp_addr, _RF_Rq_addr;
+    logic [0:3] _RF_Rp_zero, _RF_W_addr, _RF_Rp_addr, _RF_Rq_addr;
     logic [0:7] _D_addr, _RF_W_data;
-    logic [0:3] _RF_W_wr, _RF_Rp_rd, _RF_Rq_rd;
+    logic       _RF_W_wr, _RF_Rp_rd, _RF_Rq_rd;
     logic [0:1] _RF_s, _alu_s ;
     
     FSM ControlBlock( clk, _RF_Rp_zero, IR_data,
