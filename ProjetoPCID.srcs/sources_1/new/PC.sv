@@ -1,12 +1,11 @@
 
 module CounterPC(
+    input logic clk,
     input logic pc_ld,
     input logic clr,
     input logic pc_inc,
-    input logic clk,
     input logic [15:0] s,
-    output logic [15:0] pc_addr
-    );
+    output logic [15:0] pc_addr );
     
     always @(posedge clr or posedge clk)
         if (clr) pc_addr <= 0;
