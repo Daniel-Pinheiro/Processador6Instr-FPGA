@@ -1,7 +1,7 @@
 
 module tb_ContrUnit( );
 
-    logic       clk, RF_Rp_zero;
+    logic       clk,reset, RF_Rp_zero;
     logic [0:15] I_data;
     logic [0:15] I_addr;
     logic       I_rd, D_rd, D_wr;
@@ -10,7 +10,7 @@ module tb_ContrUnit( );
     logic       RF_W_wr, RF_Rp_rd, RF_Rq_rd;
     logic [0:1] RF_s, alu_s;
 
-    ControlUnit simu( clk, RF_Rp_zero,
+    ControlUnit simu( clk,reset, RF_Rp_zero,
                       I_data,
                       I_addr,
                       I_rd, D_rd, D_wr,
@@ -26,6 +26,8 @@ module tb_ContrUnit( );
     
     initial begin
         RF_Rp_zero = 1;
+        reset = 1;#20
+        reset = 0;
         I_data= {4'b011, 4'b0100, 8'b00001111}; #40;
         I_data= {4'b011, 4'b1000, 8'b01111000}; #30;
         
