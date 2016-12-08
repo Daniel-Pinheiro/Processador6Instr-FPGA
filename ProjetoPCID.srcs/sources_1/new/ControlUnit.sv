@@ -1,5 +1,5 @@
 
-module ControlUnit( input       clk, RF_Rp_zero,
+module ControlUnit( input       clk, reset, RF_Rp_zero,
                     input [0:15] I_data,
                    output [0:15] I_addr,
                    output       I_rd, D_rd, D_wr,
@@ -27,7 +27,7 @@ module ControlUnit( input       clk, RF_Rp_zero,
         PC_addr, IR_data, PC_s );
     
     FSM ControlBlock( 
-        clk, RF_Rp_zero, IR_data,
+        clk, reset, RF_Rp_zero, IR_data,
         PC_ld, PC_clr, PC_inc,
         I_rd, IR_ld, D_rd, D_wr,
         RF_W_addr, RF_Rp_addr, RF_Rq_addr,

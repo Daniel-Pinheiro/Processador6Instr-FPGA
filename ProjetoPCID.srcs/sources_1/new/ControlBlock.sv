@@ -1,5 +1,5 @@
 
-module FSM( input       clk, RF_Rp_zero,
+module FSM( input       clk, reset, RF_Rp_zero,
             input[0:15] IR_data,
            output       PC_ld, PC_clr, PC_inc,
            output       I_rd, IR_ld,
@@ -21,8 +21,11 @@ module FSM( input       clk, RF_Rp_zero,
         load, loadconst, store, add, subtract, jump, jumpiz} statetype;
     statetype  state, nextstate;
     
-    always_ff @(posedge clk)    state <= nextstate;
-    
+    always_ff @(posedge clk)
+        if(reset)
+            state <= start;
+        else
+            state <= nextstate;
     //Definição das transições de estado
     always_comb
         case( state )
