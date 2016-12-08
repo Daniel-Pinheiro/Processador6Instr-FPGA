@@ -9,37 +9,39 @@ module RAM(
                 output logic [0:7]leds,
                 output logic [0:15] R_data );
 
-    logic [0:15] mem[255:0];
-    logic [0:7] d;
+    logic [0:15] mem[246:0];
+    logic [0:7]  m_leds;
 
-    interger k;
-    initial
-        for (k = 0; k < 255 ; k = k + 1)
+    //gerando as células de memória
+    integer k;
+    initial begin
+        for (k = 0; k < 246 ; k = k + 1)
             mem[k] = 16'h00;
-
+        m_leds = 0;
+    end
+    
     always_ff @(posedge clk)
-            if (wr) mem[addr] <= W_data;
-            else if (rd) R_data <= mem[addr];
+        if (wr)
+            if(addr < 240 )
+                mem[addr] <= W_data;
+            else if(addr > 247)
+                m_leds[addr-248] <= W_data[0];
+            
+        else if (rd)
+            if(addr < 240 )
+                R_data <= mem[addr];
+            else if(addr > 247)
+                R_data <= {15'b0, m_leds[addr-248]};
+            else
+                R_data <= {15'b0, chaves[addr-240]};
 
-
-            //definindo as chaves
-    always_ff @(posedge clk)
-        for (k = 0; k < 7 ; k = k + 1)
-            mem[k+240][0] = chaves[k];
-
-    assign d=8'b0;
-
-    assign mem[239] =
-{d,chaves[7],chaves[6],chaves[5],chaves[4],chaves[3],chaves[2],chaves[1],chaves[0]};
-
-        //definindo os leds
-    assign mem[248][0] = leds[0];
-    assign mem[249][0] = leds[1];
-    assign mem[250][0] = leds[2];
-    assign mem[251][0] = leds[3];
-    assign mem[252][0] = leds[4];
-    assign mem[253][0] = leds[5];
-    assign mem[254][0] = leds[6];
-    assign mem[255][0] = leds[7];
+    //definindo os leds
+    genvar i;
+    generate
+      for (i = 0; i < 8 ; i = i + 1)
+      begin: pin_leds
+         assign leds[i] = m_leds[i];
+      end
+    endgenerate
 
 endmodule
