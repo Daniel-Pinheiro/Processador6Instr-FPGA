@@ -11,10 +11,10 @@ module RegFile(
     output logic [15:0] Rq_data
     );
 
-    logic [15:0] RAM [15:0];
+    logic [15:0] Register [15:0];
 
       always @(posedge clk)
-      if (W_wr) RAM[W_addr] <= W_data;
-      else if (Rp_rd) Rp_data <= RAM[Rp_addr];
-      else if (Rq_rd) Rq_data <= RAM[Rq_addr];
+      if (W_wr) Register[W_addr] <= W_data;
+      else if (Rp_rd) Rp_data <= Register[Rp_addr];
+      else if (Rq_rd) Rq_data <= Register[Rq_addr];
 endmodule

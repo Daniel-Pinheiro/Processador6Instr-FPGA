@@ -1,7 +1,7 @@
 
 module Processor( input       clk, reset,
-                  input [15:0] chaves,
-                 output [15:0] leds );
+                  input [7:0] chaves,
+                 output [7:0] leds );
     
     //Definição dos sinais dos componentes
     logic       D_rd, D_wr;
@@ -14,15 +14,15 @@ module Processor( input       clk, reset,
     
     //Definição do componentes
     ROM InstructionMemory( 
-        rd, I_addr, I_data );
-
+        I_rd, I_addr, I_data );
+    
     ControlUnit ControlUnit( 
         clk, reset, RF_Rp_zero,
         I_data, I_addr,
-        rd, D_rd, D_wr,
-        RF_W_addr, RF_Rp_addr, RF_Rq_addr,
+        I_rd, D_rd, D_wr,
         D_addr, RF_W_data,
         RF_W_wr, RF_Rp_rd, RF_Rq_rd,
+        RF_W_addr, RF_Rp_addr, RF_Rq_addr,
         RF_s, alu_s );
     
     DataPath OperationalBlock(
