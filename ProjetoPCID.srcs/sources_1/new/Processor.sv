@@ -5,9 +5,9 @@ module Processor( input       clk, reset,
     
     //Definição dos sinais dos componentes
     logic       D_rd, D_wr;
-    logic       RF_Rp_zero, RF_W_addr, RF_Rp_addr, RF_Rq_addr;
+    logic       RF_Rp_zero, RF_W_wr, RF_Rp_rd, RF_Rq_rd;
     logic [0:7] D_addr, RF_W_data;
-    logic [0:3] RF_W_wr, RF_Rp_rd, RF_Rq_rd;
+    logic [0:3] RF_W_addr, RF_Rp_addr, RF_Rq_addr;
     logic [0:1] RF_s, alu_s ;
     logic [15:0] I_data, I_addr;
     logic [15:0] R_data, W_data;
