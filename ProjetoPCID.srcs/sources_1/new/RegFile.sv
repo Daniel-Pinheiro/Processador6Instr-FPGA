@@ -13,8 +13,9 @@ module RegFile(
 
     logic [15:0] Register [15:0];
 
-      always @(posedge clk)
-      if (W_wr) Register[W_addr] <= W_data;
-      else if (Rp_rd) Rp_data <= Register[Rp_addr];
-      else if (Rq_rd) Rq_data <= Register[Rq_addr];
+      always @(posedge clk) begin
+          if (W_wr) Register[W_addr] <= W_data;
+          if (Rp_rd) Rp_data <= Register[Rp_addr];
+          if (Rq_rd) Rq_data <= Register[Rq_addr];
+      end
 endmodule

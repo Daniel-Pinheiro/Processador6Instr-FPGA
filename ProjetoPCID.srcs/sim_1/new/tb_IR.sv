@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 
 module tb_IR( );
     logic [15:0] data;

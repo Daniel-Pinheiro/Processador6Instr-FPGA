@@ -20,21 +20,22 @@ module RAM(
         m_leds = 0;
     end
     
-    always_ff @(posedge clk)
+    always_ff @(posedge clk) begin
         if (wr)
             if(addr < 240 )
                 mem[addr] <= W_data;
             else if(addr > 247)
                 m_leds[addr-248] <= W_data[0];
             
-        else if (rd)
+        if (rd)
             if(addr < 240 )
                 R_data <= mem[addr];
             else if(addr > 247)
                 R_data <= {15'b0, m_leds[addr-248]};
             else
                 R_data <= {15'b0, chaves[addr-240]};
-
+    end
+    
     //definindo os leds
     genvar i;
     generate
