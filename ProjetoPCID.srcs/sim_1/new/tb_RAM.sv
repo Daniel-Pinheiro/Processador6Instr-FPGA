@@ -23,14 +23,17 @@ module tb_RAM();
     W_data = 7; wr = 1; addr = 1; #10;
     W_data = 15; wr = 1; addr = 2; #10;
     W_data = 3; wr = 1; addr = 3; #10;
+    addr=255; #10;
     wr=0;
     rd=1; addr = 1; #10;
     rd=1; addr = 2; #10;
     rd=1; addr = 3; #10;
+    
     rd=0;
 
     chaves = 3; rd=1; addr = 240; #10;
     addr = 241; #10; addr=239; #10;
+    addr=255; #10;
 
 
 
