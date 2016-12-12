@@ -16,14 +16,9 @@ always
         
     initial begin
 
-//    chaves = 8'b00001111; #20;
-//    chaves = 8'b00110011; #20;
-    chaves = 8'b11110000; #20;
-//    chaves = 8'b01010101; #20;
+    chaves = 8'b01010101; #20;
     reset = 1;#30;
     reset = 0;    
-    
-    
-    
+       
     end
 endmodule

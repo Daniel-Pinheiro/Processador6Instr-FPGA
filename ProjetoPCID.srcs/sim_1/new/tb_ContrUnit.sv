@@ -14,9 +14,9 @@ module tb_ContrUnit( );
                       I_data,
                       I_addr,
                       I_rd, D_rd, D_wr,
-                      RF_W_addr, RF_Rp_addr, RF_Rq_addr,
                       D_addr, RF_W_data,
                       RF_W_wr, RF_Rp_rd, RF_Rq_rd,
+                      RF_W_addr, RF_Rp_addr, RF_Rq_addr,
                       RF_s, alu_s );
     
     always

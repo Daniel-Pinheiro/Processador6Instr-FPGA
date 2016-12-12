@@ -1,6 +1,7 @@
 
 module tb_FSM( );
     
+    logic rst;
     logic[0:15] IR_data;
     logic       PC_ld, PC_clr, PC_inc, clk;
     logic       I_rd, IR_ld, _D_rd, _D_wr;
@@ -9,7 +10,7 @@ module tb_FSM( );
     logic       _RF_W_wr, _RF_Rp_rd, _RF_Rq_rd;
     logic [0:1] _RF_s, _alu_s ;
     
-    FSM ControlBlock( clk, _RF_Rp_zero, IR_data,
+    FSM ControlBlock( clk, rst, _RF_Rp_zero, IR_data,
                           PC_ld, PC_clr, PC_inc,
                           I_rd, IR_ld, _D_rd, _D_wr,
                           _RF_W_addr, _RF_Rp_addr, _RF_Rq_addr,
@@ -23,6 +24,10 @@ module tb_FSM( );
           end
       
       initial begin
+      
+      rst = 1; #20;
+      rst = 0; #20;
+      
           _RF_Rp_zero = 1;
           IR_data= {4'b011, 4'b0100, 8'b00001111}; #40;
           IR_data= {4'b011, 4'b1000, 8'b01111000}; #30;
