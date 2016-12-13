@@ -1,19 +1,13 @@
 module RegFile(
-    input logic [15:0] W_data,
-    input logic [3:0] W_addr,
-    input logic W_wr,
-    input logic [3:0] Rp_addr,
-    input logic Rp_rd,
-    input logic [3:0] Rq_addr,
-    input logic Rq_rd,
     input logic clk,
-    output logic [15:0] Rp_data,
-    output logic [15:0] Rq_data
-    );
+    input logic W_wr, Rp_rd, Rq_rd,
+    input logic [3:0] W_addr, Rp_addr, Rq_addr,
+    input logic [15:0] W_data,
+    output logic [15:0] Rp_data, Rq_data );
 
     logic [15:0] Register [15:0];
 
-      always @(posedge clk) begin
+      always_ff @(posedge clk) begin
           if (W_wr) Register[W_addr] <= W_data;
           if (Rp_rd) Rp_data <= Register[Rp_addr];
           if (Rq_rd) Rq_data <= Register[Rq_addr];

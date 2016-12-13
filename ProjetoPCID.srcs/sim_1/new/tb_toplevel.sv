@@ -16,8 +16,9 @@ always
         
     initial begin
 
-    chaves = 8'b01010101; #20;
-    reset = 1;#30;
+    chaves = 8'b0;
+    //chaves = 8'b10101010;
+    reset = 1;#20;
     reset = 0;    
        
     end

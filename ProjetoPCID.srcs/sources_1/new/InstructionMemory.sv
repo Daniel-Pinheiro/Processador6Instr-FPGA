@@ -3,8 +3,8 @@ module ROM( input            rd,
             input     [0:15] addr,
            output reg [0:15] data );
 
-   always_comb
-      if (rd)
+   always_ff @(posedge rd)
+//      if (rd)
          case (addr)
                 00: data <= {4'b000, 4'd1, 8'd240};
                 01: data <= {4'b000, 4'd2, 8'd241};
@@ -38,7 +38,7 @@ module ROM( input            rd,
                 
 //                24: data <= {4'b000, 4'd8, 8'd247};
 //                25: data <= {4'b101, 4'd8, 8'd24};
-           default: data <= {4'b111, 4'b1111, 8'b11111111};
+           default: data <= {4'b1111, 4'b1111, 8'b11111111};
          endcase
 //     else data <= 'bz;
 endmodule

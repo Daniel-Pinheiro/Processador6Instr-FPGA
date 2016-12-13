@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_topmodulo_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_topmodulo" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="171800001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="149"></NameColumnWidth>
+      <ValueColumnWidth column_width="106"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="5" />
+   <wvobject fp_name="/tb_topmodulo/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_topmodulo/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="group10" type="group">
+      <obj_property name="label">UC</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_topmodulo/dut/ControlUnit/ControlBlock/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_topmodulo/dut/ControlUnit/PC/pc_addr" type="array">
+         <obj_property name="ElementShortName">pc_addr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_addr[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_topmodulo/dut/ControlUnit/IR/inst" type="array">
+         <obj_property name="ElementShortName">inst[15:0]</obj_property>
+         <obj_property name="ObjectShortName">inst[15:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group11" type="group">
+      <obj_property name="label">placa</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_topmodulo/chaves" type="array">
+         <obj_property name="ElementShortName">chaves[7:0]</obj_property>
+         <obj_property name="ObjectShortName">chaves[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_topmodulo/leds" type="array">
+         <obj_property name="ElementShortName">leds[7:0]</obj_property>
+         <obj_property name="ObjectShortName">leds[7:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group12" type="group">
+      <obj_property name="label">RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_topmodulo/dut/DataMemory/W_data" type="array">
+         <obj_property name="ElementShortName">W_data[15:0]</obj_property>
+         <obj_property name="ObjectShortName">W_data[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_topmodulo/dut/DataMemory/m_leds" type="array">
+         <obj_property name="ElementShortName">m_leds[7:0]</obj_property>
+         <obj_property name="ObjectShortName">m_leds[7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

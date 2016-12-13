@@ -11,7 +11,12 @@ module tb_RF();
     logic [15:0] Rp_data;
     logic [15:0] Rq_data;
     
-    RegFile sim(W_data,W_addr,W_wr,Rp_addr,Rp_rd,Rq_addr,Rq_rd,clk,Rp_data,Rq_data);
+    RegFile sim(
+        clk,
+        W_wr, Rp_rd, Rq_rd,
+        W_addr, Rp_addr, Rq_addr,
+        W_data,
+        Rp_data, Rq_data );
     
   // generate clock to sequence tests
   always

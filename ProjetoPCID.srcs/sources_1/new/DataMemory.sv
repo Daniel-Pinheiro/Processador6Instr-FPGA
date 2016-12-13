@@ -13,13 +13,13 @@ module RAM(
     logic [15:0] mem[246:0];
     logic [7:0]  m_leds;
 
-//    integer k;
-//    initial begin
-//        for (k = 0; k < 247 ; k = k + 1)
-//            mem[k] = 16'h00;
-//        for (k = 0; k < 8 ; k = k + 1)
-//            m_leds[k] = 0;
-//    end
+    integer k;
+    initial begin
+        for (k = 0; k < 247 ; k = k + 1)
+            mem[k] = 16'h00;
+        for (k = 0; k < 8 ; k = k + 1)
+            m_leds[k] = 0;
+    end
     
     always_ff @(posedge clk) begin
         if (wr)
