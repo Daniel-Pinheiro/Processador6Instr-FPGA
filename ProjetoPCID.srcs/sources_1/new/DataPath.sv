@@ -19,7 +19,7 @@ module DataPath(
     
     mux Mux(
         alu_mux, R_data, RF_W_data,
-        RF_s[1], RF_s[0], mux_rf);
+        RF_s, mux_rf);
      
     RegFile RF( clk,
         RF_W_wr, RF_Rp_rd, RF_Rq_rd,

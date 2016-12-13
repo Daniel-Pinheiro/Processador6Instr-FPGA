@@ -16,16 +16,6 @@ module Processor( input       clk, reset,
     ROM InstructionMemory( 
         I_rd, I_addr, I_data );
     
-    RAM DataMemory(
-        W_data,
-        D_addr,
-        D_wr,
-        D_rd,
-        chaves,
-        clk,
-        leds,
-        R_data );
-    
     ControlUnit ControlUnit( 
         clk, reset, RF_Rp_zero,
         I_data, I_addr,
@@ -50,6 +40,17 @@ module Processor( input       clk, reset,
         W_data,
         RF_Rp_zero );
     
+    RAM DataMemory(
+            reset, 
+            W_data,
+            D_addr,
+            D_wr,
+            D_rd,
+            chaves,
+            clk,
+            leds,
+            R_data );
+        
     //ligação dos sinais com as saídas
     
 endmodule

@@ -1,5 +1,5 @@
 
-module RAM(
+module RAM(     input logic reset,
                 input logic [15:0] W_data,
                 input logic [7:0] addr,
                 input logic wr,
@@ -13,16 +13,30 @@ module RAM(
     logic [15:0] mem[246:0];
     logic [7:0]  m_leds;
 
-    integer k;
-    initial begin
-        for (k = 0; k < 247 ; k = k + 1)
-            mem[k] = 16'h00;
-        for (k = 0; k < 8 ; k = k + 1)
-            m_leds[k] = 0;
-    end
+//    integer k;
+//    initial begin
+//        for (k = 0; k < 247 ; k = k + 1)
+//            mem[k] = 16'h00;
+//        for (k = 0; k < 8 ; k = k + 1)
+//            m_leds[k] = 0;
+//    end
+        
+//    always_ff @(posedge clk)
+//        if(rd)
+     always_ff @(posedge rd)
+           if(addr < 240)
+                R_data <= mem[addr];
+            else if(addr > 247)
+                R_data <= {15'b0, m_leds[addr-248]};
+            else
+                R_data <= {15'b0, chaves[addr-240]};
+
+    always_comb
+        leds <= m_leds;
     
-    always_ff @(posedge clk) begin
-        if (wr)
+    always_ff @(posedge clk)//@(negedge clk)
+        if (reset) m_leds = 0;
+        else if (wr)
             case( addr )
                 248:      m_leds[0] = W_data[0];
                 249:      m_leds[1] = W_data[0];
@@ -33,17 +47,6 @@ module RAM(
                 254:      m_leds[6] = W_data[0];
                 255:      m_leds[7] = W_data[0];
                 default:  mem[addr] = W_data;
-                endcase
-            
-        if (rd)
-            if(addr < 240 )
-                R_data <= mem[addr];
-            else if(addr > 247)
-                R_data <= {15'b0, m_leds[addr-248]};
-            else
-                R_data <= {15'b0, chaves[addr-240]};
-    
-        leds <= m_leds;
-    end
-    
+            endcase
+
 endmodule

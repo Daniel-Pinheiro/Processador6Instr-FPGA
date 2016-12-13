@@ -7,9 +7,18 @@ module RegFile(
 
     logic [15:0] Register [15:0];
 
-      always_ff @(posedge clk) begin
-          if (W_wr) Register[W_addr] <= W_data;
-          if (Rp_rd) Rp_data <= Register[Rp_addr];
-          if (Rq_rd) Rq_data <= Register[Rq_addr];
-      end
+//    always begin
+//      if (Rp_rd) Rp_data <= Register[Rp_addr];
+//      if (Rq_rd) Rq_data <= Register[Rq_addr];
+//    end
+
+    always_ff @(posedge Rp_rd)
+        Rp_data <= Register[Rp_addr];
+
+    always_ff @(posedge Rq_rd)
+        Rq_data <= Register[Rq_addr];
+
+    always_ff @(posedge clk)//@(negedge clk)
+        if (W_wr) Register[W_addr] <= W_data;
+
 endmodule

@@ -10,12 +10,12 @@
     <Option Name="Part" Val="xc7a35tcpg236-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
-    <Option Name="CompiledLibDirModelSim" Val="$PPRDIR/../../../../home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/modelsim"/>
-    <Option Name="CompiledLibDirQuesta" Val="$PPRDIR/../../../../home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/questa"/>
-    <Option Name="CompiledLibDirIES" Val="$PPRDIR/../../../../home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/ies"/>
-    <Option Name="CompiledLibDirVCS" Val="$PPRDIR/../../../../home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/vcs"/>
-    <Option Name="CompiledLibDirRiviera" Val="$PPRDIR/../../../../home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/riviera"/>
-    <Option Name="CompiledLibDirActivehdl" Val="$PPRDIR/../../../../home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/activehdl"/>
+    <Option Name="CompiledLibDirModelSim" Val="$PPRDIR/../../../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/modelsim"/>
+    <Option Name="CompiledLibDirQuesta" Val="$PPRDIR/../../../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/questa"/>
+    <Option Name="CompiledLibDirIES" Val="$PPRDIR/../../../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/ies"/>
+    <Option Name="CompiledLibDirVCS" Val="$PPRDIR/../../../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/vcs"/>
+    <Option Name="CompiledLibDirRiviera" Val="$PPRDIR/../../../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/riviera"/>
+    <Option Name="CompiledLibDirActivehdl" Val="$PPRDIR/../../../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
@@ -29,7 +29,7 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="basys3"/>
     <Option Name="DSANumComputeUnits" Val="16"/>
-    <Option Name="WTXSimLaunchSim" Val="169"/>
+    <Option Name="WTXSimLaunchSim" Val="227"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -181,19 +181,19 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/new/tb_RF.sv">
+      <File Path="$PSRCDIR/sim_1/new/tb_toplevel.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_RF.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_toplevel.sv"/>
           <Attr Name="ImportTime" Val="1481179981"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/tb_toplevel.sv">
+      <File Path="$PSRCDIR/sim_1/new/tb_RF.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_toplevel.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_RF.sv"/>
           <Attr Name="ImportTime" Val="1481179981"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -292,7 +292,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="tb_RF"/>
+        <Option Name="TopModule" Val="tb_topmodulo"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
