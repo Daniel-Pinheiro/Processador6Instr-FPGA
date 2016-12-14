@@ -8,13 +8,11 @@ module alu(
     
    
     always_comb
-        if (s[1]) out = a - b;
-            else if (s[0]) out = a + b;
-                else out = a;
-        //case (s)
-         //2'b00: out = a;
-         //2'b01: out = a + b;
-         //2'b10: out = a - b;
-        //endcase
+        case (s)
+         1:       out <= a + b;
+         2:       out <= a - b;
+         3:       out <= (b[5] == 0) ? (a << b[4:0]) : (a >> b[4:0]);
+         default: out <= a;
+        endcase
            
 endmodule

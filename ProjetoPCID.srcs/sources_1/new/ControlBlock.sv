@@ -18,7 +18,7 @@ module FSM( input       clk, reset, RF_Rp_zero,
     
     //Definição dos estados da FSM
     typedef enum logic[3:0] {start, fetch, decode,
-        load, loadconst, store, add, subtract, jump, jumpiz} statetype;
+        load, loadconst, store, add, subtract, jump, jumpiz, shift} statetype;
     statetype  state, nextstate;
     
     always_ff @(posedge clk)
@@ -48,6 +48,7 @@ module FSM( input       clk, reset, RF_Rp_zero,
             jumpiz:  if(RF_Rp_zero) nextstate = jump;
                      else           nextstate = fetch;
             jump:                   nextstate = fetch;
+            shift:                   nextstate = fetch;
             default:                nextstate = start;
         endcase
     
@@ -63,17 +64,17 @@ module FSM( input       clk, reset, RF_Rp_zero,
     assign D_wr = ( state == store );
     assign D_addr = ( state == load || state == store ) ? d : 0;
     
-    assign RF_W_wr = ( state == load || state == add || state == subtract || state == loadconst );
-    assign RF_W_addr = ( state == load || state == add || state == subtract || state == loadconst ) ? ra : 0;
+    assign RF_W_wr = ( state == load || state == add || state == subtract || state == shift || state == loadconst );
+    assign RF_W_addr = ( state == load || state == add || state == subtract || state == shift || state == loadconst ) ? ra : 0;
     assign RF_W_data = ( state == loadconst ) ? IR_data[8:15] : 'bz;
     
-    assign RF_Rp_rd = ( state == store || state == jumpiz || state == add || state == subtract );
-    assign RF_Rp_addr = ( state == store || state == jumpiz ) ? ra : ( state == add || state == subtract ) ? rb : 0;
+    assign RF_Rp_rd = ( state == store || state == jumpiz || state == add || state == subtract || state == shift );
+    assign RF_Rp_addr = ( state == store || state == jumpiz ) ? ra : ( state == add || state == subtract || state == shift ) ? rb : 0;
     
-    assign RF_Rq_rd = ( state == add || state == subtract );
-    assign RF_Rq_addr = ( state == add || state == subtract ) ? rc : 0;
+    assign RF_Rq_rd = ( state == add || state == subtract || state == shift );
+    assign RF_Rq_addr = ( state == add || state == subtract || state == shift ) ? rc : 0;
     
-    assign RF_s = ( state == load ) ? 1 : ( state == loadconst ) ? 2 : ( state == add || state == subtract ) ? 0 : 3;
-    assign alu_s = ( state == add ) ? 1 : ( state == subtract ) ? 2 : 0;
+    assign RF_s = ( state == load ) ? 1 : ( state == loadconst ) ? 2 : ( state == add || state == subtract || state == shift ) ? 0 : 3;
+    assign alu_s = ( state == add ) ? 1 : ( state == subtract ) ? 2 : ( state == shift ) ? 3 : 0;
 
 endmodule
