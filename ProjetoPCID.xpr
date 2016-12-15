@@ -3,19 +3,19 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/Daniel/Documents/GitHub/ProjetoPCIDpls/ProjetoPCID.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/Daniel/Documents/GitHub/ProjetoPCID/ProjetoPCID.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="23b80c5161c04b9ab3be4c7682e1fd62"/>
     <Option Name="Part" Val="xc7a35tcpg236-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
-    <Option Name="CompiledLibDirModelSim" Val="$PPRDIR/../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/modelsim"/>
-    <Option Name="CompiledLibDirQuesta" Val="$PPRDIR/../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/questa"/>
-    <Option Name="CompiledLibDirIES" Val="$PPRDIR/../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/ies"/>
-    <Option Name="CompiledLibDirVCS" Val="$PPRDIR/../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/vcs"/>
-    <Option Name="CompiledLibDirRiviera" Val="$PPRDIR/../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/riviera"/>
-    <Option Name="CompiledLibDirActivehdl" Val="$PPRDIR/../AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/activehdl"/>
+    <Option Name="CompiledLibDirModelSim" Val="$PPRDIR/../../AppData/Roaming/Xilinx/Vivado/$PPRDIR/$PPRDIR/AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/modelsim"/>
+    <Option Name="CompiledLibDirQuesta" Val="$PPRDIR/../../AppData/Roaming/Xilinx/Vivado/$PPRDIR/$PPRDIR/AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/questa"/>
+    <Option Name="CompiledLibDirIES" Val="$PPRDIR/../../AppData/Roaming/Xilinx/Vivado/$PPRDIR/$PPRDIR/AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/ies"/>
+    <Option Name="CompiledLibDirVCS" Val="$PPRDIR/../../AppData/Roaming/Xilinx/Vivado/$PPRDIR/$PPRDIR/AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/vcs"/>
+    <Option Name="CompiledLibDirRiviera" Val="$PPRDIR/../../AppData/Roaming/Xilinx/Vivado/$PPRDIR/$PPRDIR/AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/riviera"/>
+    <Option Name="CompiledLibDirActivehdl" Val="$PPRDIR/../../AppData/Roaming/Xilinx/Vivado/$PPRDIR/$PPRDIR/AppData/home/alexandroni/Desktop/project_final_4/project_final_4.cache/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
@@ -29,7 +29,7 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="basys3"/>
     <Option Name="DSANumComputeUnits" Val="16"/>
-    <Option Name="WTXSimLaunchSim" Val="234"/>
+    <Option Name="WTXSimLaunchSim" Val="283"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -190,6 +190,16 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sim_1/new/tb_ALU.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_ALU.sv"/>
+          <Attr Name="ImportTime" Val="1481179981"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sim_1/new/tb_RF.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -200,20 +210,20 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/tb_ContrUnit.sv">
+      <File Path="$PSRCDIR/sim_1/new/tb_RAM.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_ContrUnit.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_RAM.sv"/>
           <Attr Name="ImportTime" Val="1481179981"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/tb_RAM.sv">
+      <File Path="$PSRCDIR/sim_1/new/tb_ContrUnit.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_RAM.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_ContrUnit.sv"/>
           <Attr Name="ImportTime" Val="1481179981"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -234,16 +244,6 @@
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_fsm.sv"/>
-          <Attr Name="ImportTime" Val="1481179981"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/new/tb_ALU.sv">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../ProjetoPCID-master/ProjetoPCID.srcs/sim_1/new/tb_ALU.sv"/>
           <Attr Name="ImportTime" Val="1481179981"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -290,6 +290,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sim_1/imports/new/tb_topmodulo_behav.wcfg">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/tb_topmodulo_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1481644202"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="tb_topmodulo"/>
@@ -328,7 +335,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -343,6 +350,7 @@
           <Option Id="BinFile">1</Option>
         </Step>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
   </Runs>

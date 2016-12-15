@@ -10,7 +10,7 @@ module tb_RAM();
     logic [7:0]leds;
     logic [15:0] R_data;
 
-    RAM sim(W_data,addr,wr,rd,chaves,clk,leds,R_data);
+    RAM sim(reset,W_data,addr,wr,rd,chaves,clk,leds,R_data);
 
       // generate clock to sequence tests
     always

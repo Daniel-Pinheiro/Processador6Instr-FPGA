@@ -38,6 +38,7 @@ module FSM( input       clk, reset, RF_Rp_zero,
                         'b011:      nextstate = loadconst;
                         'b100:      nextstate = subtract;
                         'b101:      nextstate = jump;
+                        'b110:      nextstate = shift;
                         default:    nextstate = start;
                         endcase
             load:                   nextstate = fetch;

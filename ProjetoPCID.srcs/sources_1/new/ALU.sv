@@ -11,7 +11,7 @@ module alu(
         case (s)
          1:       out <= a + b;
          2:       out <= a - b;
-         3:       out <= (b[5] == 0) ? (a << b[4:0]) : (a >> b[4:0]);
+         3:       out <= (b[4] == 0) ? (a << b[3:0]) : (a >> b[3:0]);
          default: out <= a;
         endcase
            
